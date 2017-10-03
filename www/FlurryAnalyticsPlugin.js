@@ -1,6 +1,4 @@
-
-  
-  function Flurry() {};
+function Flurry() {};
 
   // These functions must be called before you start the Flurry session
 
@@ -13,23 +11,25 @@
 		return cordova.exec(successCallback, failureCallback, 'FlurryAnalyticsPlugin', 'initialize', [appKey, options]);
 	}; 
   
+    /*
 	Flurry.prototype.setUserId = function (userId, successCallback, failureCallback) {
         return cordova.exec(successCallback, failureCallback, 'FlurryAnalyticsPlugin', 'setUserId', [
             userId
         ]);
     };
 	
-	Flurry.prototype.setAge = function (userId, successCallback, failureCallback) {
+	Flurry.prototype.setAge = function (age, successCallback, failureCallback) {
         return cordova.exec(successCallback, failureCallback, 'FlurryAnalyticsPlugin', 'setAge', [
             age
         ]);
     };	
 	
-	Flurry.prototype.setGender = function (userId, successCallback, failureCallback) {
+	Flurry.prototype.setGender = function (gender, successCallback, failureCallback) {
         return cordova.exec(successCallback, failureCallback, 'FlurryAnalyticsPlugin', 'setGender', [
             gender
         ]);
-    };	
+    };
+    */	
 	
 	// the params parameter is optional
 	Flurry.prototype.logEvent = function (event /* [params], successCallback, failureCallback */) {
@@ -106,6 +106,7 @@
         ]);
     };
 	
+    /*
 	Flurry.prototype.logPageView = function (successCallback, failureCallback) {
         return cordova.exec(successCallback, failureCallback, 'FlurryAnalyticsPlugin', 'logPageView', []);
     };	
@@ -123,7 +124,6 @@
         ]);
     };	
 	
-    // only needed for older versions of Android
 	// key is a string
 	Flurry.prototype.startSession = function(key,successCallback,failureCallback) {
 		return cordova.exec(successCallback, failureCallback, 'FlurryAnalyticsPlugin', 'startSession', [key]);
@@ -132,6 +132,7 @@
 	Flurry.prototype.endSession = function(successCallback,failureCallback) {
 		return cordova.exec(successCallback, failureCallback, 'FlurryAnalyticsPlugin', 'endSession', []);
 	};
+    */
 	
 
 module.exports = new Flurry();
