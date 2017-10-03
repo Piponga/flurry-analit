@@ -9,9 +9,10 @@
 
 #pragma mark Initialization
 
-- (void)pluginInitialize
+- (void)initialize:(CDVInvokedUrlCommand *)command
 {
-    NSString * flurryKey = @"FJSRCXMRKYTVFFNW9WXK";
+    //NSString * flurryKey = @"FJSRCXMRKYTVFFNW9WXK";
+    NSString * flurryKey = [command argumentAtIndex:0];
     
     if( flurryKey!=nil && [flurryKey isEqualToString:@""]==NO && [flurryKey rangeOfString:@"FLURRY_KEY"].location == NSNotFound ){
         NSLog(@"Starting Flurry Session: %@", flurryKey);
