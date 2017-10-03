@@ -41,6 +41,7 @@ public class FlurryAnalyticsPlugin extends CordovaPlugin implements FlurryAgentL
                 @Override
                 public void run() {
                     try {
+                        /*
                         switch (action) {
                             case "initialize":
                                 init(args, callbackContext);
@@ -75,6 +76,30 @@ public class FlurryAnalyticsPlugin extends CordovaPlugin implements FlurryAgentL
                             case "endSession":
                                 endSession(callbackContext);
                                 break;
+                        }
+                        */
+                        if (action.equals("initialize")) {
+                            init(args, callbackContext);
+                        } else if(action.equals("logEvent")) {
+                            logEvent(args, callbackContext);
+                        } else if(action.equals("endTimedEvent")) {
+                            endTimedEvent(args, callbackContext);
+                        } else if(action.equals("logPageView")) {
+                            logPageView(callbackContext);
+                        } else if(action.equals("logError")) {
+                            logError(args, callbackContext);
+                        } else if(action.equals("setLocation")) {
+                            setLocation(args, callbackContext);
+                        } else if(action.equals("setUserId")) {
+                            setUserId(args, callbackContext);
+                        } else if(action.equals("setAge")) {
+                            setAge(args, callbackContext);
+                        } else if(action.equals("setGender")) {
+                            setGender(args, callbackContext);
+                        } else if(action.equals("startSession")) {
+                            startSession(callbackContext);
+                        } else if(action.equals("endSession")) {
+                            endSession(callbackContext);
                         }
                     } catch (JSONException e) {
                         Log.d("Flurry exception: ", e.getMessage());
@@ -171,7 +196,7 @@ public class FlurryAnalyticsPlugin extends CordovaPlugin implements FlurryAgentL
                     builder.withPulseEnabled(options.getBoolean("enablePulse"));
                 }
 
-                switch (options.optString("logLevel").toUpperCase()) {
+                /*switch (options.optString("logLevel").toUpperCase()) {
 
                     case "VERBOSE":
                         builder.withLogLevel(Log.VERBOSE);
@@ -193,6 +218,22 @@ public class FlurryAnalyticsPlugin extends CordovaPlugin implements FlurryAgentL
                         builder.withLogLevel(Log.ERROR);
                         builder.withLogEnabled(true);
                         break;
+                }*/
+                if (options.optString("logLevel").toUpperCase().equals("VERBOSE")) {
+                    builder.withLogLevel(Log.VERBOSE);
+                    builder.withLogEnabled(true);
+                } else if(options.optString("logLevel").toUpperCase().equals("DEBUG")) {
+                    builder.withLogLevel(Log.DEBUG);
+                    builder.withLogEnabled(true);
+                } else if(options.optString("INFO").toUpperCase().equals("DEBUG")) {
+                    builder.withLogLevel(Log.INFO);
+                    builder.withLogEnabled(true);
+                } else if(options.optString("WARN").toUpperCase().equals("DEBUG")) {
+                    builder.withLogLevel(Log.WARN);
+                    builder.withLogEnabled(true);
+                } else if(options.optString("ERROR").toUpperCase().equals("DEBUG")) {
+                    builder.withLogLevel(Log.ERROR);
+                    builder.withLogEnabled(true);
                 }
 
 
@@ -281,7 +322,7 @@ public class FlurryAnalyticsPlugin extends CordovaPlugin implements FlurryAgentL
         }
         @SuppressWarnings("unchecked")
         Iterator<String> nameItr = json.keys();
-        Map<String, String> params = new HashMap<>();
+        Map<String, String> params = new HashMap<String, String>();
         while (nameItr.hasNext()) {
             String name = nameItr.next();
             params.put(name, json.getString(name));
