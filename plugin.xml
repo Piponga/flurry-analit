@@ -24,12 +24,15 @@
         <config-file target="config.xml" parent="/*">
             <feature name="FlurryAnalyticsPlugin">
                 <param name="ios-package" value="FlurryAnalyticsPlugin"/>
+                <param name="onload" value="true" />
             </feature>
         </config-file>
-        <!--<header-file src="src/ios/Flurry.h" />-->
-        <header-file src="src/ios/FlurryAnalyticsPlugin.h"/>
-        <source-file src="src/ios/FlurryAnalyticsPlugin.m"/>
-        <!--<pod id="Flurry-iOS-SDK/FlurrySDK"/>-->
+        <header-file src="src/ios/FlurryAnalyticsPlugin.h" />
+        <header-file src="src/ios/Flurry.h" />
+        <source-file src="src/ios/FlurryAnalyticsPlugin.m" />
+        <source-file src="src/ios/libFlurry_7.3.0.a" framework="true" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="Security.framework" />
     </platform>
 
     <platform name="android">
