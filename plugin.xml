@@ -5,12 +5,13 @@
     <license>Apache 2.0</license>
     <keywords>flurry,analytics,cordova</keywords>
     <author>Carlos "blakgeek" Lawton</author>
-    <repo>https://github.com/blakgeek/cordova-plugin-flurryanalytics.git</repo>
-    <issue>https://github.com/blakgeek/cordova-plugin-flurryanalytics/issues</issue>
+    <repo>https://github.com/Piponga/flurry-analit.git</repo>
+    <issue>https://github.com/Piponga/flurry-anali/issues</issue>
 
     <js-module src="www/FlurryAnalyticsPlugin.js" name="FlurryAnalyticsPlugin">
         <clobbers target="FlurryAnalytics"/>
         <clobbers target="plugins.FlurryAnalytics"/>
+        <clobbers target="window.FlurryAnalytics" />
     </js-module>
 
     <engines>
