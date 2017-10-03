@@ -5,7 +5,7 @@
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVPluginResult.h>
 
-@interface FlurryPlugin : CDVPlugin
+@interface FlurryAnalyticsPlugin : CDVPlugin
 
 - (void)logEvent:(CDVInvokedUrlCommand*)command;
 - (void)logScreenView:(CDVInvokedUrlCommand*)command;
