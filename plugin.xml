@@ -30,7 +30,8 @@
         <header-file src="src/ios/FlurryAnalyticsPlugin.h" />
         <header-file src="src/ios/Flurry.h" />
         <source-file src="src/ios/FlurryAnalyticsPlugin.m" />
-        <source-file src="src/ios/libFlurry_7.3.0.a" framework="true" />
+        <!--<source-file src="src/ios/libFlurry_7.3.0.a" framework="true" />-->
+        <source-file src="src/ios/libFlurry_8.2.1.a" framework="true" />
         <framework src="SystemConfiguration.framework" />
         <framework src="Security.framework" />
     </platform>
