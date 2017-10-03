@@ -2,7 +2,7 @@
 //  FlurryPlugin.m
 //
 
-#import "FlurryPlugin.h"
+#import "FlurryAnalyticsPlugin.h"
 #import "Flurry.h"
 
 @implementation FlurryPlugin
