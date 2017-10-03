@@ -5,7 +5,7 @@
 #import "FlurryAnalyticsPlugin.h"
 #import "Flurry.h"
 
-@implementation FlurryPlugin
+@implementation FlurryAnalyticsPlugin
 
 #pragma mark Initialization
 
