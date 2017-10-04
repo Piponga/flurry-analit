@@ -6,6 +6,8 @@
 //  Copyright © 2016 Flurry Inc. All rights reserved.
 //
 
+
+
 /*!
  *  @brief Enum for setting up log output level.
  *  @since 4.2.0
@@ -100,26 +102,14 @@ typedef enum {
  *  @brief Enables implicit recording of Apple Store transactions.
  *  @since 7.9.0
  *
- *  @note This method needs to be called before any transaction is finialized.
+ *  This method needs to be called before any transaction is finialized.
  *
- *  @param value @c YES to enable transaction logging with the default being @c NO.
+ *
+ *  @param value YES to enable transaction logging with the default being NO.
  *
  */
 
 - (FlurrySessionBuilder*) withIAPReportingEnabled:(BOOL) value;
-
-/*!
- *  @brief Enables opting out of background sessions being counted towards total sessions.
- *  @since 8.1.0-rc.1
- *
- *  @note This method must be called prior to invoking #startSession:.
- *
- *  @param value @c NO to opt out of counting background sessions towards total sessions.
- *  The default value for the session is @c YES
- *
- */
-
-- (FlurrySessionBuilder*) withIncludeBackgroundSessionsInMetrics:(BOOL) value;
 #endif
 
 #if TARGET_OS_TV

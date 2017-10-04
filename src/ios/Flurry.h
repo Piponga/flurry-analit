@@ -1218,5 +1218,4 @@ typedef enum {
 + (void)registerJSContextWithContext:(JSContext*)jscontext;
 #endif
 
-
 @end
