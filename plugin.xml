@@ -29,11 +29,9 @@
         </config-file>
 		<source-file src="src/ios/Empty.m" />
 		<header-file src="src/ios/Flurry.h" />
-		<header-file src="src/ios/FlurryWatch.h" />
         <header-file src="src/ios/FlurryAnalyticsPlugin.h" />
         <source-file src="src/ios/FlurryAnalyticsPlugin.m" />
         <source-file src="src/ios/libFlurry_7.5.1.a" framework="true" />
-		<source-file src="src/ios/libFlurryWatch_7.5.1.a" framework="true" />
 		
 		<framework src="CFNetwork.framework" />
         <framework src="SystemConfiguration.framework" />
