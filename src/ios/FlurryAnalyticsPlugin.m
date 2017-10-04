@@ -14,10 +14,11 @@
     //NSString * flurryKey = @"FJSRCXMRKYTVFFNW9WXK";
     NSString * flurryKey = [command.arguments objectAtIndex:0];
     
-    if( flurryKey!=nil && [flurryKey isEqualToString:@""]==NO && [flurryKey rangeOfString:@"FLURRY_KEY"].location == NSNotFound ){
-        NSLog(@"Starting Flurry Session: %@", flurryKey);
-        [Flurry startSession:flurryKey];
-    }
+    //if( flurryKey!=nil && [flurryKey isEqualToString:@""]==NO && [flurryKey rangeOfString:@"FLURRY_KEY"].location == NSNotFound ){
+    //    NSLog(@"Starting Flurry Session: %@", flurryKey);
+    //    [Flurry startSession:flurryKey];
+    //}
+	[Flurry startSession:flurryKey];
     
     NSLog(@"Flurry Plugin initialized");
 }
