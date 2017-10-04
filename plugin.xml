@@ -31,6 +31,8 @@
         <header-file src="src/ios/Flurry.h" />
         <source-file src="src/ios/FlurryAnalyticsPlugin.m" />
         <source-file src="src/ios/libFlurry_7.5.0.a" framework="true" />
+		
+		<framework src="CFNetwork.framework" />
         <framework src="SystemConfiguration.framework" />
         <framework src="Security.framework" />
     </platform>
